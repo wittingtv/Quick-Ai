@@ -93,25 +93,7 @@ svg {
   justify-content: center;
 }
 
-/* 7. إصلاح صندوق التنبيه (Are you sure?) */
-.ios-confirm-content {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-}
-.ios-confirm-card {
-  background: var(--bg-elev);
-  padding: 24px;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 320px;
-  text-align: center;
-}
+
 
 /* 8. إصلاح المسافة السفلية للمحتوى */
 .container {
