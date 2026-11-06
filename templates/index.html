@@ -1,1817 +1,425 @@
- <!DOCTYPE html>
-<!--
-  ═══════════════════════════════════════════════════════════════════
-  
-  ██╗██╗ ███████╗████████╗ ██████╗ ██████╗ ███████╗
-  ██║██║ ██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔════╝
-  ██║██║ ███████╗   ██║   ██║   ██║██████╔╝█████╗  
-  ██║██║ ╚════██║   ██║   ██║   ██║██╔══██╗██╔══╝  
-  ██║██║ ███████║   ██║   ╚██████╔╝██║  ██║███████╗
-  ╚═╝╚═╝ ╚══════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝
-  
-  ═══════════════════════════════════════════════════════════════════
-  
-  🏪 iStore - Premium iOS (IPA) & Android (APK) Store
-  
-  👨‍💻 Designed & Developed by: iStore Team
-  📧 Official Contact: support.istoreipa@gmail.com
-  📅 Created: 2026
-  🔒 Copyright © 2026 iStore. All Rights Reserved.
-  
-  ⚠️ LEGAL NOTICE:
-  This code is the exclusive property of iStore Team.
-  Unauthorized copying, modification, distribution, or use of this 
-  code, via any medium, is strictly prohibited.
-  
-  Any attempt to clone, reproduce, or redistribute this application 
-  or any of its components without explicit written permission from 
-  the owner will be prosecuted under DMCA (Digital Millennium 
-  Copyright Act) and applicable international copyright laws.
-  
-  If you see this code on another website, please report immediately to:
-  support.istoreipa@gmail.com
-  
-  Original source: https://ipa-store.onrender.com
-  ═══════════════════════════════════════════════════════════════════
--->
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
-<meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
- <title>iStore - تحميل تطبيقات وألعاب الآيفون (IPA) والأندرويد (APK) مجاناً</title>
-    <link rel="icon" type="image/png" href="/static/icon.png">
-    <!-- الوصف: يشمل الآيفون والأندرويد -->
-    <meta name="description" content="متجر iStore هو وجهتك الأولى لتحميل أحدث تطبيقات وألعاب الآيفون (IPA) والأندرويد (APK) المدفوعة والمعدلة مجاناً. تصفح مكتبتنا وحمل أفضل التطبيقات بروابط مباشرة وسريعة.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>iStore - Premium Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
     
-    <!-- الكلمات المفتاحية: تشمل المنصتين -->
-    <meta name="keywords" content="iStore, IPA, APK, متجر آيفون, متجر أندرويد, تحميل تطبيقات مهكرة, ألعاب مهكرة, تطبيقات مدفوعة مجانا, iOS, Android, iStore IPA">
-    
-    <!-- إعدادات المشاركة على وسائل التواصل الاجتماعي -->
-    <meta property="og:title" content="iStore - متجر التطبيقات المتكامل للآيفون والأندرويد">
-    <meta property="og:description" content="حمل أفضل تطبيقات وألعاب الآيفون (IPA) والأندرويد (APK) مجاناً من متجر iStore.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ipa-store.onrender.com/">
-    <!-- يفضل تغيير هذا الرابط بصورة حقيقية للأيقونة تاعك -->
-    <meta property="og:image" content="https://ipa-store.onrender.com/static/icon.png">
-    
-    <!-- إعدادات تويتر -->
-    <meta name="twitter:card" content="summary_large_image">
- <!-- PWA Manifest -->
-<link rel="manifest" href="/static/manifest.json">
-<meta name="theme-color" content="#0b0b0f">
+    <style>
+        /* ═══════════════════════════════════════════════════════════
+           1. VARIABLES & THEMES
+           ═══════════════════════════════════════════════════════════ */
+        :root {
+            --bg: #0b0b0f;
+            --bg-elev: #141419;
+            --card-bg: rgba(28, 28, 32, 0.72);
+            --modal-bg: #1c1c20;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #f5f5f7;
+            --subtext: #8e8e93;
+            --accent: #0a84ff;
+            --accent2: #5e5ce6;
+            --danger: #ff453a;
+            --success: #32d74b;
+            --warning: #ff9f0a;
+            --radius: 18px;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --safe-bottom: env(safe-area-inset-bottom, 20px);
+        }
 
-<!-- iOS PWA -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="iStore">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/benssariyassine-tech/iPA-Store/main/static/icon.png">
+        [data-theme="light"] {
+            --bg: #f2f2f7;
+            --bg-elev: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --border: rgba(0, 0, 0, 0.08);
+            --text: #1c1c1e;
+            --subtext: #6c6c70;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
 
-<!-- Android PWA -->
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="iStore">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cairo:wght@400;600;700;900&family=Poppins:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
- <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/benssariyassine-tech/iPA-Store/main/static/icon.png">
+        [data-theme="gold"] {
+            --bg: #0a0805;
+            --card-bg: rgba(40, 30, 10, 0.7);
+            --accent: #d4af37;
+            --accent2: #b8860b;
+            --text: #f5e6c8;
+        }
 
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<meta name="google-site-verification" content="IH9QNXDpJWrhJc2w-RTABEcQSd6zpI3Pv1fy4kLYT2k" />
-<!-- ✅ Monetag Verification Meta Tag -->
-<meta name="monetag" content="1122d9d64ba07330ac40d46815fd1b0f">
-<script>(function(s){s.dataset.zone='11799162',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-<link rel="stylesheet" href="/static/style.css">
+        [data-theme="sea"] {
+            --bg: #001524;
+            --card-bg: rgba(2, 48, 71, 0.7);
+            --accent: #00b4d8;
+            --accent2: #0077b6;
+            --text: #e0fbfc;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           2. RESET & BASE
+           ═══════════════════════════════════════════════════════════ */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: 'Cairo', 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+            overflow-x: hidden;
+            padding-bottom: calc(100px + var(--safe-bottom));
+        }
+        svg { width: 24px; height: 24px; max-width: 100%; max-height: 100%; display: block; }
+        button { font-family: inherit; border: none; background: none; cursor: pointer; color: inherit; }
+
+        /* ═══════════════════════════════════════════════════════════
+           3. HEADER & SEARCH
+           ═══════════════════════════════════════════════════════════ */
+        .header {
+            position: sticky; top: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 20px;
+            background: rgba(var(--bg), 0.8);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
+        .logo span { color: var(--accent); }
+        .icon-btn {
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: var(--card-bg); border: 1px solid var(--border);
+        }
+
+        .container { padding: 20px; max-width: 600px; margin: 0 auto; }
+        
+        .search-bar {
+            position: relative; margin-bottom: 20px;
+        }
+        .search-bar svg {
+            position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+            color: var(--subtext); width: 20px; height: 20px;
+        }
+        .search-bar input {
+            width: 100%; padding: 14px 16px 14px 48px;
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 16px; color: var(--text); font-size: 15px;
+            font-family: inherit; outline: none; transition: 0.2s;
+        }
+        .search-bar input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(10,132,255,0.2); }
+
+        /* ═══════════════════════════════════════════════════════════
+           4. FILTERS & CARDS
+           ═══════════════════════════════════════════════════════════ */
+        .filters {
+            display: flex; gap: 10px; overflow-x: auto; padding-bottom: 20px;
+            scrollbar-width: none;
+        }
+        .filters::-webkit-scrollbar { display: none; }
+        .filter-chip {
+            padding: 8px 20px; border-radius: 20px;
+            background: var(--card-bg); border: 1px solid var(--border);
+            font-weight: 700; font-size: 14px; white-space: nowrap;
+        }
+        .filter-chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+        .section-title { margin-bottom: 16px; }
+        .section-title h2 { font-size: 28px; font-weight: 900; margin-bottom: 4px; }
+        .section-title p { color: var(--accent); font-size: 14px; font-weight: 700; }
+
+        .card {
+            background: var(--card-bg); border-radius: 24px;
+            border: 1px solid var(--border); overflow: hidden;
+            margin-bottom: 20px; box-shadow: var(--shadow);
+            animation: slideUp 0.4s ease-out backwards;
+        }
+        .card-banner { position: relative; height: 180px; background: #222; }
+        .card-banner img { width: 100%; height: 100%; object-fit: cover; }
+        .card-badge {
+            position: absolute; top: 12px; right: 12px;
+            padding: 4px 12px; border-radius: 20px;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);
+            color: #fff; font-size: 12px; font-weight: 800;
+        }
+        .card-content { padding: 16px; display: flex; gap: 16px; align-items: flex-start; }
+        .card-icon { width: 60px; height: 60px; border-radius: 14px; object-fit: cover; border: 1px solid var(--border); }
+        .card-info { flex: 1; }
+        .card-info h3 { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+        .card-info .publisher { font-size: 12px; color: var(--warning); font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+        .card-info .desc { font-size: 13px; color: var(--subtext); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* ═══════════════════════════════════════════════════════════
+           5. BOTTOM NAV & FLOATING BUTTONS
+           ═══════════════════════════════════════════════════════════ */
+        .bottom-nav-wrap {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            padding: 0 20px calc(20px + var(--safe-bottom));
+            display: flex; flex-direction: column; align-items: center; gap: 12px;
+            pointer-events: none; z-index: 100;
+        }
+        .nav-row { display: flex; align-items: center; gap: 12px; width: 100%; max-width: 400px; }
+        .nav-menu {
+            flex: 1; display: flex; justify-content: space-around; padding: 10px;
+            background: var(--card-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--border); border-radius: 30px; box-shadow: var(--shadow);
+            pointer-events: auto;
+        }
+        .nav-item {
+            display: flex; flex-direction: column; align-items: center; gap: 4px;
+            color: var(--subtext); font-size: 10px; font-weight: 800; transition: 0.2s;
+        }
+        .nav-item.active { color: var(--accent); }
+        .nav-item svg { width: 22px; height: 22px; }
+
+        .search-fab {
+            width: 54px; height: 54px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 24px rgba(10, 132, 255, 0.4); pointer-events: auto;
+        }
+
+        .robot-btn {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: var(--accent); pointer-events: auto;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 20px rgba(10, 132, 255, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+        .robot-face {
+            width: 30px; height: 24px; background: #fff; border-radius: 8px;
+            position: relative; display: flex; justify-content: center; align-items: center; gap: 4px;
+        }
+        .robot-eye { width: 6px; height: 6px; background: #000; border-radius: 50%; }
+
+        /* ═══════════════════════════════════════════════════════════
+           6. MODALS & UTILS
+           ═══════════════════════════════════════════════════════════ */
+        .modal {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px); z-index: 1000;
+            display: flex; align-items: flex-end; justify-content: center;
+            opacity: 0; pointer-events: none; transition: 0.3s;
+        }
+        .modal.open { opacity: 1; pointer-events: auto; }
+        .modal-content {
+            width: 100%; max-width: 500px; background: var(--bg-elev);
+            border-radius: 30px 30px 0 0; padding: 24px;
+            transform: translateY(100%); transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .modal.open .modal-content { transform: translateY(0); }
+        
+        .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+        .theme-btn {
+            padding: 12px; border-radius: 12px; background: var(--bg);
+            border: 2px solid transparent; font-weight: 700; font-size: 12px;
+        }
+        .theme-btn.active { border-color: var(--accent); }
+
+        /* ═══════════════════════════════════════════════════════════
+           7. ANIMATIONS
+           ═══════════════════════════════════════════════════════════ */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
 <body>
- <div id="splashScreen" style="display: none !important;">
-<div class="splash-logo-wrap">
-<img src="https://raw.githubusercontent.com/benssariyassine-tech/iPA-Store/main/static/icon.png" class="splash-logo" alt="iStore" style="object-fit: contain;">
-</div>
-<div class="splash-title">i<span>Store</span></div>
-<div class="splash-sub">Loading Library</div>
-<div class="splash-loader"><span></span><span></span><span></span></div>
-</div>
 
-<div id="notifStack"></div>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">i<span>Store</span></div>
+        <button class="icon-btn" onclick="openSettings()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+    </header>
 
-<div id="imgViewer">
-<button class="close-viewer" onclick="closeImgViewer()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-<img id="imgViewerImg" src="">
-</div>
-
-<div id="previewBar" class="preview-bar" style="display:none;">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-<span data-i18n="previewMode">User Preview Mode</span>
-<button onclick="toggleUserPreview()" style="background:#000;color:#fff;border:none;padding:3px 10px;border-radius:8px;font-size:11px;cursor:pointer;font-weight:bold;font-family:inherit;" data-i18n="exit">Exit</button>
-</div>
-
-<div class="header">
-  <div class="logo-area">
-    i<span>Store</span>
-  </div>
-<div class="icon-btn" id="favHeaderBtn" onclick="switchTab('favorites')" style="display:none;">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-</div>
-
-<div class="icon-btn account-header-btn" id="accountHeaderBtn" onclick="openAccountModal()" aria-label="Account">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-</div>
-</div>
- <!-- Maintenance Banner -->
-<div id="maintenanceBanner" class="maintenance-banner">
-    <div class="marquee-container">
-        <div class="marquee-text" id="maintenanceText"></div>
-    </div>
-</div>
-<!-- ============================================
-     🔍 SEARCH OVERLAY (Telegram-Style)
-     ============================================ -->
-<div id="searchOverlay" class="search-overlay">
-  
-  <!-- Header -->
-  <div class="search-overlay-header">
-    <button class="search-back-btn" onclick="closeSearchOverlay()" aria-label="Back">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"/>
-      </svg>
-    </button>
-    
-    <div class="search-input-wrap">
-      <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
- <input type="text" 
-             id="searchOverlayInput" 
-             class="search-overlay-input" 
-             placeholder="ابحث عن تطبيق، لعبة أو أداة..."
-             data-i18n-placeholder="searchPlaceholder"
-             autocomplete="off"
-             autocorrect="off"
-             autocapitalize="off"
-             spellcheck="false">
-      <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearchOverlay()" aria-label="Clear">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"/>
-          <line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Filter Chips -->
-  <div class="search-filters" id="searchFilters">
-    <button class="search-chip active" data-filter="all" onclick="setSearchFilter('all', this)">All</button>
-    <button class="search-chip" data-filter="IPA" onclick="setSearchFilter('IPA', this)">iOS</button>
-    <button class="search-chip" data-filter="APK" onclick="setSearchFilter('APK', this)">Android</button>
-    <button class="search-chip" data-filter="apps" onclick="setSearchFilter('apps', this)">Apps</button>
-    <button class="search-chip" data-filter="games" onclick="setSearchFilter('games', this)">Games</button>
-    <button class="search-chip" data-filter="tools" onclick="setSearchFilter('tools', this)">Tools</button>
-  </div>
-
-  <!-- Results -->
-  <div class="search-results" id="searchOverlayResults">
-    <div class="search-empty-state">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-      <p data-i18n="startTyping">ابحث عن أي تطبيق أو لعبة أو أداة</p>
-    </div>
-  </div>
-
-</div>
-<div class="container">
-<div class="search-box">
-<svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-<input type="text" id="searchInput" class="search-input" placeholder="Search any app, game or tool..." oninput="onSearchInput()" data-i18n-placeholder="searchPlaceholder">
-<button class="search-clear" id="searchClear" onclick="clearSearch()"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-</div>
-<div id="dynamicContent"></div>
-<!-- SEO Text Block -->
-        <div id="seoDescriptionBlock" style="margin-top: 30px; padding: 24px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; text-align: center; margin-bottom: 20px;">
-            <h2 id="seoTitleText" style="font-size: 18px; font-weight: 900; margin-bottom: 12px; color: var(--text-color);">Welcome to iStore</h2>
-            <p id="seoDescText" style="font-size: 13px; color: var(--subtext-color); line-height: 1.6; margin: 0;">
-                iStore is your ultimate destination for downloading the latest premium and modified apps and games for iOS (IPA) and Android (APK) for free. Browse our massive library and download directly with fast, direct links, no jailbreak required.
-            </p>
+    <!-- Main Content -->
+    <main class="container">
+        <div class="search-bar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Search any app, game or tool...">
         </div>
- <!-- Footer & Copyright -->
-        <footer style="margin-top: 24px; padding: 20px; border-top: 1px solid var(--border-color); text-align: center;">
-     <p id="footerCopyrightText" style="font-size:12px; color:var(--subtext-color); margin-bottom:6px; font-weight:700;">
-    &copy; 2026 iStore. All rights reserved.
-</p>
-<p style="font-size:11px; color:var(--subtext-color); margin:0 0 10px 0; opacity:0.85; text-align:center;">
-    Designed &amp; Built by <strong style="color:var(--text-color);">iStore Team</strong>
-    &nbsp;|&nbsp;
-<a href="#" onclick="openDMCAPage(); return false;" style="color:var(--accent); text-decoration:underline; font-weight:700;">DMCA / Copyright Policy</a>
 
-            <p id="footerDisclaimerText" style="font-size: 11px; color: var(--subtext-color); opacity: 0.8; line-height: 1.6; max-width: 450px; margin: 0 auto 10px auto;">
-                <strong>DMCA / Disclaimer:</strong> iStore does not host any files on its servers. All download links are provided by third-party platforms (such as GitHub, Telegram, etc.) and are for educational/testing purposes only. We are not affiliated with Apple Inc. or any app developers. If you are a copyright owner and want a link removed, please contact us.
-            </p>
+        <div class="filters">
+            <button class="filter-chip active">All</button>
+            <button class="filter-chip">iOS</button>
+            <button class="filter-chip">Android</button>
+            <button class="filter-chip">Games</button>
+            <button class="filter-chip">Apps</button>
+        </div>
+
+        <div class="section-title">
+            <h2 id="dateText">Today</h2>
+            <p>⚡ Special Updates & Highlights</p>
+        </div>
+
+        <div id="app-grid">
+            <!-- Cards will be injected here by JS -->
+        </div>
+    </main>
+
+    <!-- Bottom Nav & Floating Buttons -->
+    <div class="bottom-nav-wrap">
+        <!-- Robot -->
+        <button class="robot-btn" onclick="alert('🤖 AI Assistant is ready!')">
+            <div class="robot-face">
+                <div class="robot-eye"></div>
+                <div class="robot-eye"></div>
+            </div>
+        </button>
+
+        <div class="nav-row">
+            <div class="nav-menu">
+                <button class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>Today</span>
+                </button>
+                <button class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="3"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/></svg>
+                    <span>Games</span>
+                </button>
+                <button class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    <span>Apps</span>
+                </button>
+                <button class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    <span>Tools</span>
+                </button>
+            </div>
+            <button class="search-fab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Settings / Theme Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="font-size:20px; font-weight:900;">Settings</h3>
+                <button onclick="closeSettings()" style="color:var(--subtext);">✕</button>
+            </div>
             
-            <p style="font-size: 11px; color: var(--accent); font-weight: 700; margin: 0;">
-                <span id="footerContactText">Contact: </span>
-                <a href="mailto:support.istoreipa@gmail.com" style="color: var(--accent); text-decoration: none;">support.istoreipa@gmail.com</a>
-            </p>
-        </footer>
-</div>
-
-<button class="admin-add-float" id="adminAddFloatBtn" onclick="openAddAppModal()">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-<span data-i18n="addNewApp">Add New App</span>
-</button>
-
-<!-- ===== ISTO NAV (Robot + Glass Nav) ===== -->
-<div class="isto-nav-wrap">
-
-  <!-- 🤖 الروبوت -->
-  <button id="istoBtn" class="isto-btn" onclick="openAiChat(); if(navigator.vibrate) navigator.vibrate(15);" aria-label="مساعد isto">
-    <span class="isto-glow"></span>
-    <span class="isto-ring"></span>
-    <span class="isto-body">
-      <span class="isto-eyes">
-        <span class="isto-eye"><span class="isto-pupil"></span></span>
-        <span class="isto-eye"><span class="isto-pupil"></span></span>
-      </span>
-      <span class="isto-mouth"></span>
-      <span class="isto-antenna"></span>
-    </span>
-    <span class="isto-badge" id="istoBadge"></span>
-    <span class="isto-label">isto</span>
-  </button>
-
-  <!-- 🧭 القائمة + البحث -->
-  <div class="bottom-nav-row">
-    
-    <!-- القائمة الرئيسية -->
-    <div class="floating-nav">
-      <button class="nav-item active" data-tab="today" onclick="switchTab('today', this)">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span class="nav-label" data-i18n="navToday">اليوم</span>
-      </button>
-      <button class="nav-item" data-tab="games" onclick="switchTab('games', this)">
-        <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3" ry="3"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1.2" fill="currentColor"/><circle cx="18" cy="13" r="1.2" fill="currentColor"/></svg>
-        <span class="nav-label" data-i18n="navGames">ألعاب</span>
-      </button>
-      <button class="nav-item" data-tab="apps" onclick="switchTab('apps', this)">
-        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        <span class="nav-label" data-i18n="navApps">تطبيقات</span>
-      </button>
-      <button class="nav-item" data-tab="tools" onclick="switchTab('tools', this)">
-        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-        <span class="nav-label" data-i18n="navTools">أدوات</span>
-      </button>
+            <p style="font-weight:700; margin-bottom:10px; font-size:14px;">Choose Theme</p>
+            <div class="theme-grid">
+                <button class="theme-btn" onclick="setTheme('dark')">Dark</button>
+                <button class="theme-btn" onclick="setTheme('light')">Light</button>
+                <button class="theme-btn" onclick="setTheme('gold')">Gold</button>
+                <button class="theme-btn" onclick="setTheme('sea')">Sea</button>
+            </div>
+        </div>
     </div>
 
-    <!-- 🆕 زر البحث المنفصل -->
-    <button class="search-fab" onclick="openSearchOverlay()" aria-label="Search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-    </button>
-
-  </div>
-
-</div>
-
-<div id="accountModal" class="modal">
-<div class="modal-box">
-<button class="modal-close-x" onclick="closeModal('accountModal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-
-<div id="loginView">
-  <div style="text-align:center;margin-bottom:20px;">
-    <div style="width:70px;height:70px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:inline-flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(10,132,255,0.4);margin-bottom:14px;">
-      <img src="https://raw.githubusercontent.com/benssariyassine-tech/iPA-Store/main/static/icon.png" width="36" height="36" alt="iStore" style="object-fit: contain;">
-     </div>
-    <h3 class="modal-title" data-i18n="welcomeTitle">Welcome to iStore</h3>
-    <p class="modal-subtitle" data-i18n="welcomeSub">Sign in to like apps, post comments, and apply as a publisher.</p>
-  </div>
-  <button onclick="loginWithGoogle()" class="btn-google">
-    <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.14C3.16 21.39 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.62H1.18C.43 8.12 0 9.81 0 12s.43 3.88 1.18 5.38l4.09-3.14z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.16 2.61 1.18 6.62l4.09 3.14c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
-    <span data-i18n="signInGoogle">Sign in with Google</span>
-  </button>
-  <div class="divider"><div class="divider-line"></div><span class="divider-text">OR</span><div class="divider-line"></div></div>
-  <input type="email" id="loginEmail" class="input-field" placeholder="Email" data-i18n-placeholder="emailPlaceholder">
-  <input type="password" id="loginPassword" class="input-field" placeholder="Password" data-i18n-placeholder="passwordPlaceholder">
-  <div style="text-align:right;margin:-8px 0 12px 0;"><button type="button" onclick="forgotPassword()" style="background:none;border:none;color:var(--accent);font-weight:700;font-size:12px;cursor:pointer;font-family:inherit;padding:4px 0;" data-i18n="forgotPassword">Forgot password?</button></div>
-  <button onclick="loginWithEmail()" class="btn-primary" data-i18n="signIn">Sign In</button>
-  <div class="auth-switch">
-    <span data-i18n="noAccount">Don't have an account? </span>
-    <button class="auth-switch-btn" onclick="showRegisterView()" data-i18n="createOne">Create one</button>
-  </div>
-</div>
-
-<div id="registerView" style="display:none;">
-  <div style="text-align:center;margin-bottom:20px;">
-    <h3 class="modal-title" data-i18n="createAccountTitle">Create Account</h3>
-    <p class="modal-subtitle" data-i18n="createAccountSub">Join iStore and start downloading today.</p>
-  </div>
-  <input type="text" id="authName" class="input-field" placeholder="Full Name" data-i18n-placeholder="namePlaceholder">
-  <input type="email" id="authEmail" class="input-field" placeholder="Email" data-i18n-placeholder="emailPlaceholder">
-  <input type="password" id="authPassword" class="input-field" placeholder="Password (min 6 chars)" data-i18n-placeholder="passwordPlaceholderReg">
-  <button onclick="registerWithEmail()" class="btn-primary" data-i18n="createAccountBtn">Create Account</button>
-  <div class="auth-switch">
-    <span data-i18n="haveAccount">Already have an account? </span>
-    <button class="auth-switch-btn" onclick="showLoginView()" data-i18n="signInLink">Sign in</button>
-  </div>
-</div>
-
-<div id="verifyCodeView" style="display:none;">
-  <div style="text-align:center;margin-bottom:20px;">
-    <div style="width:70px;height:70px;border-radius:22px;background:linear-gradient(135deg,var(--warning),#ff6b00);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(255,159,10,0.4);margin-bottom:14px;">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-    </div>
-    <h3 class="modal-title" data-i18n="verifyTitle">Verify Your Email</h3>
-    <p class="modal-subtitle" data-i18n="verifySub">We sent a 6-digit code to your email. Enter it below.</p>
-  </div>
-  <input type="text" id="verificationCodeInput" class="code-input" placeholder="000000" maxlength="6" inputmode="numeric">
-  <button onclick="verifyCode()" class="btn-primary" data-i18n="verifyBtn">Verify Account</button>
-  <button onclick="resendCode()" class="btn-secondary" style="margin-top:8px;" data-i18n="resendCode">Resend Code</button>
-  <div class="auth-switch" style="margin-top:14px;">
-    <button class="auth-switch-btn" style="color:var(--danger);" onclick="handleSignOut()" data-i18n="cancel">Cancel</button>
-  </div>
-</div>
-
-<div id="loggedInView" style="display:none;">
-<div class="profile-avatar-wrap">
-<img id="userAvatar" class="profile-avatar" src="" alt="Avatar">
-<div class="profile-avatar-edit" onclick="openEditProfile()">
-<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-</div>
-</div>
-<h3 id="userNameText" class="profile-name">User</h3>
-<p id="userEmailText" class="profile-email"></p>
-<div style="text-align:center;">
-<span id="userRoleBadge" class="profile-badge user">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-User
-</span>
-</div>
-<div id="verifyEmailBox" class="verify-box" style="display:none;">
-  <p data-i18n="verifyRequired">⚠️ Your account is not verified. Please check your email (and Spam folder).</p>
-  <button onclick="reloadUserVerification()" data-i18n="verifiedBtn">I have verified my email</button>
-</div>
-<div style="margin-top:14px;">
-<button class="account-action-btn" onclick="openEditProfile()">
-<svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-<span data-i18n="editProfile">Edit Profile</span>
-</button>
-<button class="account-action-btn" onclick="openSettings()">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-<span data-i18n="settings">Settings</span>
-</button>
-<button class="account-action-btn gold" id="partnerBtn" onclick="openPartnerRequest()">
-<svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-<span data-i18n="applyPublisher">Apply as Publisher</span>
-</button>
-<button class="account-action-btn danger" onclick="handleSignOut()">
-<svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-<span data-i18n="signOut">Sign Out</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-
-<div id="settingsModal" class="modal">
-<div class="modal-box">
-<button class="modal-close-x" onclick="closeModal('settingsModal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-<h3 class="modal-title" data-i18n="settings">Settings</h3>
-<div style="margin-bottom:16px;">
-<div class="setting-label" style="margin-bottom:10px;" data-i18n="language">Language / اللغة</div>
-<div class="lang-switch">
-  <button class="lang-btn" id="langEn" onclick="changeLanguage('en')">English</button>
-  <button class="lang-btn" id="langAr" onclick="changeLanguage('ar')">العربية</button>
-</div>
-</div>
-<div class="setting-item">
-<div>
-<div class="setting-label" data-i18n="darkMode">Dark Mode</div>
-<div class="setting-sub" data-i18n="darkModeSub">Switch between light and dark theme</div>
-</div>
-<button id="settingDarkMode" class="setting-toggle" onclick="toggleSetting('darkMode')"></button>
-</div>
-<div class="setting-item">
-<div>
-<div class="setting-label" data-i18n="notifications">Notifications</div>
-<div class="setting-sub" data-i18n="notificationsSub">Receive app update alerts</div>
-</div>
-<button id="settingNotifications" class="setting-toggle" onclick="toggleSetting('notifications')"></button>
-</div>
-<div class="setting-item">
-<div>
-<div class="setting-label" data-i18n="autoDownload">Auto-play Downloads</div>
-<div class="setting-sub" data-i18n="autoDownloadSub">Start download instantly when tapped</div>
-</div>
-<button id="settingAutoDownload" class="setting-toggle" onclick="toggleSetting('autoDownload')"></button>
-</div>
-<div class="setting-item">
-<div>
-<div class="setting-label" data-i18n="fontSize">Font Size</div>
-<div class="setting-sub" data-i18n="fontSizeSub">Adjust app text size</div>
-</div>
-<select id="settingFontSize" class="setting-select" onchange="changeFontSize(this.value)">
-<option value="small" data-i18n="fontSmall">Small</option>
-<option value="medium" selected data-i18n="fontMedium">Medium</option>
-<option value="large" data-i18n="fontLarge">Large</option>
-</select>
-</div>
-<div class="setting-item">
-<div>
-<div class="setting-label" data-i18n="clearCache">Clear Cache</div>
-<div class="setting-sub" data-i18n="clearCacheSub">Reset app data and preferences</div>
-</div>
-<button onclick="clearAppCache()" style="background:var(--danger);color:#fff;border:none;padding:9px 16px;border-radius:11px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;" data-i18n="clear">Clear</button>
-</div>
-<div class="setting-item">
-<div>
-<div class="setting-label" data-i18n="appVersion">App Version</div>
-<div class="setting-sub">iStore IPA v3.0</div>
-</div>
-<span style="color:var(--subtext-color);font-size:12px;font-weight:700;">Latest</span>
-</div>
-<button onclick="closeModal('settingsModal')" class="btn-secondary" style="margin-top:14px;" data-i18n="close">Close</button>
-</div>
-</div>
-
-<div id="editProfileModal" class="modal">
-<div class="modal-box">
-<button class="modal-close-x" onclick="closeModal('editProfileModal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-<h3 class="modal-title" data-i18n="editProfile">Edit Profile</h3>
-<img id="editAvatarPreview" class="avatar-preview" src="">
-<label class="avatar-upload-label" for="avatarFileInput">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-<span data-i18n="changePhoto">Tap to change photo</span>
-</label>
-<input type="file" id="avatarFileInput" accept="image/*" style="display:none;" onchange="previewAvatar(event)">
-<div class="setting-label" style="margin-bottom:6px;" data-i18n="displayName">Display Name</div>
-<input type="text" id="editDisplayName" class="input-field" maxlength="30">
-<button onclick="saveProfile()" class="btn-primary" data-i18n="saveChanges">Save Changes</button>
-<button onclick="closeModal('editProfileModal')" class="btn-secondary" style="margin-top:8px;" data-i18n="cancel">Cancel</button>
-</div>
-</div>
-
-<div id="partnerRequestModal" class="modal">
-<div class="modal-box">
-<button class="modal-close-x" onclick="closeModal('partnerRequestModal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-<h3 class="modal-title" data-i18n="publisherTitle">Publisher Program</h3>
-<p style="color:var(--subtext-color);font-size:13px;line-height:1.6;margin-bottom:16px;">
-<span data-i18n="publisherSub">As a Verified Publisher, you will be able to:</span><br><br>
-<span style="display:inline-flex;align-items:center;gap:6px;margin-bottom:6px;">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-<span data-i18n="publisherFeature1">Upload new apps to the store</span>
-</span><br>
-<span style="display:inline-flex;align-items:center;gap:6px;margin-bottom:6px;">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-<span data-i18n="publisherFeature2">Manage your own published apps</span>
-</span><br>
-<span style="display:inline-flex;align-items:center;gap:6px;">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg>
-<span data-i18n="publisherFeature3">Delete or update your uploads</span>
-</span>
-</p>
-<div class="setting-label" style="margin-bottom:6px;" data-i18n="publisherReason">Why would you like to become a publisher?</div>
-<textarea id="partnerReason" class="input-field" style="height:100px;resize:none;" data-i18n-placeholder="publisherPlaceholder"></textarea>
-<button onclick="submitPartnerRequest()" class="btn-primary" data-i18n="submitApplication">Submit Application</button>
-<button onclick="closeModal('partnerRequestModal')" class="btn-secondary" style="margin-top:8px;" data-i18n="cancel">Cancel</button>
-</div>
-</div>
-
-<div id="addAppModal" class="modal">
-<div class="modal-box" style="max-width:420px;">
-<button class="modal-close-x" onclick="closeModal('addAppModal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-<h3 id="modalTitleText" class="modal-title">Add App to Cloud</h3>
-<input type="hidden" id="editingAppId">
-<div style="background:rgba(10,132,255,0.08);border:1px solid rgba(10,132,255,0.25);border-radius:16px;padding:16px;margin-bottom:16px;">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <span style="font-size:13px;font-weight:800;color:var(--accent);" data-i18n="autoFill">Auto-Fill from App Store</span>
-  </div>
-  <input type="text" id="itunesUrlInput" class="input-field" placeholder="Paste App Store URL..." style="margin-bottom:8px;">
-  <button type="button" onclick="fetchFromItunes()" id="fetchItunesBtn" class="btn-primary" style="padding:11px;font-size:13px;" data-i18n="fetchInfo">Fetch App Info</button>
-  <div id="fetchStatus" style="font-size:12px;color:var(--subtext-color);text-align:center;margin-top:10px;display:none;"></div>
-</div>
-<div class="setting-label" style="margin-bottom:6px;" data-i18n="publisherAlias">Publisher Alias</div>
-<input type="text" id="appPublisher" class="input-field" placeholder="By @example">
-<div class="setting-label" style="margin-bottom:6px;" data-i18n="category">Category</div>
-<select id="appCategory" class="input-field"><option value="today">Today (Featured)</option><option value="games">Games</option><option value="apps">Apps</option><option value="tools">Tools</option></select>
-<div class="setting-label" style="margin-bottom:6px;" data-i18n="platform">Platform</div>
-<select id="appPlatform" class="input-field"><option value="IPA">iOS (IPA)</option><option value="APK">Android (APK)</option></select>
-<div class="setting-label" style="margin-bottom:6px;">نوع التطبيق (App Type)</div>
-<select id="appType" class="input-field" onchange="handleAppTypeChange()">
-    <option value="mod">MOD (معدل - تحميل مباشر)</option>
-    <option value="official">Official (رسمي - من المتجر الرسمي)</option>
-</select>
-<div class="setting-label" style="margin-bottom:6px;" data-i18n="appIcon">App Icon</div>
-<input type="file" id="appImgFile" class="input-field" accept="image/*">
-  <div class="setting-label" style="margin-bottom:6px;">Banner Image (Hero)</div>
-<input type="file" id="appBannerFile" class="input-field" accept="image/*">
-<div style="font-size:11px;color:var(--subtext-color);margin:-8px 0 12px 0;padding:0 4px;">
-  Optional — 16:9 recommended (max 500KB)
-</div>
-<div class="setting-label" style="margin-bottom:6px;" data-i18n="screenshots">Screenshots</div>
-<input type="file" id="appScreenshotsFile" class="input-field" accept="image/*" multiple>
-<input type="text" id="appName" class="input-field" placeholder="App Name">
-<input type="text" id="appSize" class="input-field" placeholder="App Size (e.g. 2.1 GB)">
-<input type="text" id="appInfo" class="input-field" placeholder="Detailed app information">
-<input type="text" id="appUrl" class="input-field" placeholder="Download Link (.ipa / .apk)">
-<div class="setting-label" style="margin-bottom:6px;" data-i18n="extraFiles">Additional Files</div>
-<input type="file" id="appExtraFiles" class="input-field" multiple>
-<button onclick="saveNewApp()" class="btn-primary" style="background:linear-gradient(135deg,var(--danger),#d70015);box-shadow:0 6px 20px rgba(255,69,58,0.4);" data-i18n="savePublish">Save & Publish</button>
-<button onclick="closeModal('addAppModal')" class="btn-secondary" style="margin-top:8px;" data-i18n="cancel">Cancel</button>
-</div>
-</div>
-
-<div id="appDetailModal" class="bottom-sheet-modal">
-<div class="bottom-sheet-content" id="appDetailBody"></div>
-</div>
-<!-- ===== COMMENT REPORT MODAL ===== -->
-<div id="commentReportModal" class="modal">
-  <div class="modal-box">
-    <button class="modal-close-x" onclick="closeCommentReport()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    
-    <div style="text-align:center;margin-bottom:22px;">
-      <div style="width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,#ff9f0a,#d70015);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 12px 35px rgba(255,159,10,0.45),inset 0 1px 0 rgba(255,255,255,0.2);margin-bottom:16px;position:relative;">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
-          <line x1="4" y1="22" x2="4" y2="15"/>
-        </svg>
-      </div>
-      <h3 class="modal-title" data-i18n="reportCommentTitle">Report Comment</h3>
-      <p class="modal-subtitle" data-i18n="reportCommentSub">Your report is anonymous. Help us keep iStore safe.</p>
-    </div>
-    
-    <input type="hidden" id="commentReportAppId">
-    <input type="hidden" id="commentReportId">
-    
-    <div id="commentBeingReported" style="background:linear-gradient(135deg,rgba(255,159,10,0.06),rgba(255,159,10,0.02));border:1px solid rgba(255,159,10,0.2);border-radius:14px;padding:14px;margin-bottom:18px;">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:13px;flex-shrink:0;" id="reportedCommentAvatar">U</div>
-        <div style="flex:1;min-width:0;">
-          <div style="font-size:13px;font-weight:800;color:var(--text-color);" id="reportedCommentUser">User</div>
-          <div style="font-size:10px;color:var(--subtext-color);font-weight:600;">Reported Comment</div>
-        </div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-      </div>
-      <div style="color:var(--text-color);font-size:13px;line-height:1.55;padding:10px 12px;background:var(--modal-bg);border-radius:10px;border-left:3px solid var(--warning);" id="reportedCommentText">...</div>
-    </div>
-    
-    <div class="setting-label" style="margin-bottom:12px;font-size:13px;letter-spacing:0.3px;" data-i18n="reportReasons">Choose a reason:</div>
-    
-    <div id="commentReportReasons" style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px;">
-      
-      <label class="report-reason-option" onclick="selectCommentReason(this, 'spam')">
-        <input type="radio" name="commentReportReason" value="spam" style="display:none;">
-        <div class="reason-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff9f0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-        </div>
-        <div class="reason-content">
-          <div class="reason-title" data-i18n="reasonSpam">Spam or Misleading</div>
-          <div class="reason-desc" data-i18n="reasonSpamDesc">Unwanted ads, repetitive content</div>
-        </div>
-      </label>
-      
-      <label class="report-reason-option" onclick="selectCommentReason(this, 'hate')">
-        <input type="radio" name="commentReportReason" value="hate" style="display:none;">
-        <div class="reason-icon" style="background:rgba(255,69,58,0.12);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff453a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-            <line x1="12" y1="9" x2="12" y2="13"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-          </svg>
-        </div>
-        <div class="reason-content">
-          <div class="reason-title" data-i18n="reasonHate">Hate Speech</div>
-          <div class="reason-desc" data-i18n="reasonHateDesc">Attacks on race, religion, gender</div>
-        </div>
-      </label>
-      
-      <label class="report-reason-option" onclick="selectCommentReason(this, 'profanity')">
-        <input type="radio" name="commentReportReason" value="profanity" style="display:none;">
-        <div class="reason-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff9f0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 14s1.5-1.5 4-1.5 4 1.5 4 1.5"/>
-            <line x1="9" y1="9" x2="9.01" y2="9"/>
-            <line x1="15" y1="9" x2="15.01" y2="9"/>
-            <path d="M8 18s1.5-2 4-2 4 2 4 2"/>
-          </svg>
-        </div>
-        <div class="reason-content">
-          <div class="reason-title" data-i18n="reasonProfanity">Profanity or Obscenity</div>
-          <div class="reason-desc" data-i18n="reasonProfanityDesc">Swear words, vulgar language</div>
-        </div>
-      </label>
-      
-      <label class="report-reason-option" onclick="selectCommentReason(this, 'harassment')">
-        <input type="radio" name="commentReportReason" value="harassment" style="display:none;">
-        <div class="reason-icon" style="background:rgba(255,69,58,0.12);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff453a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
-          </svg>
-        </div>
-        <div class="reason-content">
-          <div class="reason-title" data-i18n="reasonHarassment">Harassment or Bullying</div>
-          <div class="reason-desc" data-i18n="reasonHarassmentDesc">Targeting or intimidating a user</div>
-        </div>
-      </label>
-      
-      <label class="report-reason-option" onclick="selectCommentReason(this, 'misinformation')">
-        <input type="radio" name="commentReportReason" value="misinformation" style="display:none;">
-        <div class="reason-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff9f0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-            <line x1="12" y1="9" x2="12" y2="13"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-          </svg>
-        </div>
-        <div class="reason-content">
-          <div class="reason-title" data-i18n="reasonMisinfo">False Information</div>
-          <div class="reason-desc" data-i18n="reasonMisinfoDesc">Scams, fake links, misleading info</div>
-        </div>
-      </label>
-      
-      <label class="report-reason-option" onclick="selectCommentReason(this, 'other')">
-        <input type="radio" name="commentReportReason" value="other" style="display:none;">
-        <div class="reason-icon" style="background:rgba(142,142,147,0.12);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-          </svg>
-        </div>
-        <div class="reason-content">
-          <div class="reason-title" data-i18n="reasonOther">Something Else</div>
-          <div class="reason-desc" data-i18n="reasonOtherDesc">Other violation not listed above</div>
-        </div>
-      </label>
-      
-    </div>
-    
-    <button onclick="submitCommentReport()" class="btn-primary" style="background:linear-gradient(135deg,#ff9f0a,#d70015);box-shadow:0 8px 24px rgba(255,159,10,0.45);font-weight:900;letter-spacing:0.3px;" data-i18n="submitCommentReport">
-      <span style="display:inline-flex;align-items:center;gap:8px;justify-content:center;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"/>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-        </svg>
-        <span data-i18n="submitCommentReportText">Submit Report</span>
-      </span>
-    </button>
-    <button onclick="closeCommentReport()" class="btn-secondary" style="margin-top:8px;" data-i18n="cancel">Cancel</button>
-    
-    <p style="font-size:10px;color:var(--subtext-color);text-align:center;margin-top:14px;line-height:1.6;opacity:0.8;">
-      <span style="display:inline-flex;align-items:center;gap:4px;justify-content:center;">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-        </svg>
-        <span data-i18n="reportNote">Anonymous report. Abuse may result in a ban.</span>
-      </span>
-    </p>
-  </div>
-</div>
- <!-- ===== THEME PICKER MODAL ===== -->
-<div id="themeModal" class="modal">
-  <div class="modal-box theme-modal-box">
-    <button class="modal-close-x" onclick="closeModal('themeModal')">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <h3 class="modal-title" id="themeModalTitle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:6px;"><circle cx="13.5" cy="6.5" r="1.2"/><circle cx="17.5" cy="10.5" r="1.2"/><circle cx="8.5" cy="7.5" r="1.2"/><circle cx="6.5" cy="12.5" r="1.2"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-      Choose Theme
-    </h3>
-    <p class="modal-subtitle" id="themeModalSub">Pick a look that fits your style</p>
-
-    <!-- BASIC - الفوق -->
-    <div class="theme-section">
-      <div class="theme-section-label" id="themeBasicLabel">Basic</div>
-      <div class="theme-grid">
-        <button class="theme-option" data-theme="dark" onclick="selectTheme('dark')">
-          <div class="theme-preview preview-dark"></div>
-          <span class="theme-name" data-i18n="themeDark">Dark</span>
-          <div class="theme-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        </button>
-        <button class="theme-option" data-theme="light" onclick="selectTheme('light')">
-          <div class="theme-preview preview-light"></div>
-          <span class="theme-name" data-i18n="themeLight">Light</span>
-          <div class="theme-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        </button>
-      </div>
-    </div>
-
-    <!-- SPECIAL - التحت -->
-    <div class="theme-section">
-      <div class="theme-section-label" id="themeSpecialLabel">Special</div>
-      <div class="theme-grid">
-        <button class="theme-option" data-theme="gold" onclick="selectTheme('gold')">
-          <div class="theme-preview preview-gold"></div>
-          <span class="theme-name" data-i18n="themeGold">Gold</span>
-          <div class="theme-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        </button>
-        <button class="theme-option" data-theme="algeria" onclick="selectTheme('algeria')">
-          <div class="theme-preview preview-algeria"></div>
-          <span class="theme-name" data-i18n="themeAlgeria">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-            Algeria
-          </span>
-          <div class="theme-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        </button>
-        <button class="theme-option" data-theme="redblack" onclick="selectTheme('redblack')">
-          <div class="theme-preview preview-redblack"></div>
-          <span class="theme-name" data-i18n="themeRedBlack">Red &amp; Black</span>
-          <div class="theme-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        </button>
-        <button class="theme-option" data-theme="sea" onclick="selectTheme('sea')">
-          <div class="theme-preview preview-sea"></div>
-          <span class="theme-name" data-i18n="themeSea">Deep Sea</span>
-          <div class="theme-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="reportModal" class="modal">
-<div class="modal-box">
-<button class="modal-close-x" onclick="closeModal('reportModal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-<h3 class="modal-title" data-i18n="reportTitle">Report an Issue</h3>
-<input type="hidden" id="reportAppId">
-<div class="setting-label" style="margin-bottom:10px;" data-i18n="quickReason">Quick reason:</div>
-<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px;">
-<button type="button" onclick="setReportReasonText('Broken Link')" class="btn-secondary" style="text-align:left;padding:12px;font-size:13px;" data-i18n="brokenLink">Broken Link</button>
-<button type="button" onclick="setReportReasonText('Expired Certificate')" class="btn-secondary" style="text-align:left;padding:12px;font-size:13px;" data-i18n="expiredCert">Expired Certificate</button>
-<button type="button" onclick="setReportReasonText('Inappropriate Content')" class="btn-secondary" style="text-align:left;padding:12px;font-size:13px;" data-i18n="badContent">Inappropriate Content</button>
-</div>
-<textarea id="reportReason" class="input-field" style="height:80px;resize:none;" data-i18n-placeholder="reportDetails"></textarea>
-<button onclick="submitReport()" class="btn-primary" style="background:linear-gradient(135deg,var(--danger),#d70015);box-shadow:0 6px 20px rgba(255,69,58,0.4);" data-i18n="sendReport">Send Report</button>
-<button onclick="closeModal('reportModal')" class="btn-secondary" style="margin-top:8px;" data-i18n="close">Close</button>
-</div>
-</div>
-
-
-
-<div id="aiChatDrawer">
-<div class="aiChatPanel" id="aiChatPanel" onclick="event.stopPropagation()">
-
-<div class="aiChatHeader">
-  <button class="aiChatBack" onclick="closeAiChat()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
-    </svg>
-  </button>
-  
-  <div class="aiChatTitleBlock">
-    <div class="aiChatName" data-i18n="supportTitle">الدعم الفني</div>
-    <div class="aiChatStatus">
-      <span class="statusDot"></span>
-    <span data-i18n="statusOnline">متصل</span>
-    </div>
-  </div>
-</div>
-<div class="aiChatMessages" id="aiChatMessages">
-<!-- شاشة الترحيب -->
-<div id="aiWelcomeScreen" class="ai-welcome-screen">
-  <div class="ai-welcome-text-wrap">
-    <h1 class="ai-welcome-text ai-welcome-ar" id="aiWelcomeAr">مرحباً</h1>
-    <h1 class="ai-welcome-text ai-welcome-en" id="aiWelcomeEn">Welcome</h1>
-  </div>
-  <div class="ai-welcome-glow" id="aiWelcomeGlow"></div>
-  
-  <!-- اقتراحات سريعة -->
-  <div class="ai-quick-actions" id="aiQuickActions">
-    <button class="ai-quick-btn" onclick="sendQuickAction('app')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="3" y="3" width="7" height="7"/>
-        <rect x="14" y="3" width="7" height="7"/>
-        <rect x="3" y="14" width="7" height="7"/>
-        <rect x="14" y="14" width="7" height="7"/>
-      </svg>
-      <span data-i18n="quickFindApp">Find an app</span>
-    </button>
-    
-    <button class="ai-quick-btn" onclick="sendQuickAction('help')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-        <line x1="12" y1="17" x2="12.01" y2="17"/>
-      </svg>
-      <span data-i18n="quickHowDownload">How to download</span>
-    </button>
-    
-    <button class="ai-quick-btn" onclick="sendQuickAction('publisher')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-        <polyline points="17 8 12 3 7 8"/>
-        <line x1="12" y1="3" x2="12" y2="15"/>
-      </svg>
-      <span data-i18n="quickBecomePublisher">Become a publisher</span>
-    </button>
-  </div>
-</div>
-
-</div>
-<div class="aiChatInputBar">
-  <div class="aiChatInputWrap"><textarea id="aiChatInput" class="aiChatInput" placeholder="اكتب رسالتك..." data-i18n-placeholder="chatPlaceholder"
-   rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendAiMessage();}"></textarea>
-  </div>
-  <button class="aiChatSend" id="aiChatSendBtn" onclick="sendAiMessage()" aria-label="Send">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="12" y1="19" x2="12" y2="5"/>
-      <polyline points="5 12 12 5 19 12"/>
-    </svg>
-  </button>
-</div>
-</div>
-</div>
-<!-- ============================================
-     🎧 SUPPORT & SETTINGS MENU
-     ============================================ -->
-<div class="support-menu-wrap" id="supportMenuWrap">
-  <div class="support-menu-items" id="supportMenuItems">
-    
-    <!-- 🎧 الدعم -->
-    <button class="support-menu-item" onclick="closeSupportMenu(); setTimeout(openAiChat, 200);">
-      <span class="support-robot-icon">
-        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d='M 8 20 Q 8 8, 20 8 Q 32 8, 32 20'/>
-          <rect x='5' y='18' width='5' height='7' rx='2'/>
-          <rect x='30' y='18' width='5' height='7' rx='2'/>
-          <rect x='12' y='14' width='16' height='13' rx='4'/>
-          <circle cx='16.5' cy='19.5' r='1.4' fill='currentColor'/>
-          <circle cx='23.5' cy='19.5' r='1.4' fill='currentColor'/>
-          <line x1='17' y1='24' x2='23' y2='24'/>
-          <path d='M 33 24 Q 33 29, 28 30 L 24 30'/>
-          <circle cx='23' cy='30' r='1.6'/>
-        </svg>
-      </span>
-      <span data-i18n="supportTitle">الدعم الفني</span>
-    </button>
-    
-    <!-- 👑 لوحة الإدارة -->
-    <button class="support-menu-item admin-only-item" id="adminPanelBtn" onclick="closeSupportMenu(); setTimeout(function(){ switchTab('admin_panel', null); }, 200);" style="display:none;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 7l4 4 5-7 5 7 4-4v12H3V7z"/>
-      </svg>
-      <span data-i18n="adminPanel">لوحة الإدارة</span>
-    </button>
-    
-    <!-- ⚙️ الإعدادات -->
-    <button class="support-menu-item" onclick="closeSupportMenu(); setTimeout(openSettings, 200);">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-      </svg>
-      <span data-i18n="settings">الإعدادات</span>
-    </button>
-    
-  </div>
-  
-  <button class="support-menu-chevron" id="supportMenuChevron" onclick="toggleSupportMenu()" aria-label="Menu">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="6 15 12 9 18 15"/>
-    </svg>
-  </button>
-</div>
- <!-- ============================================
-     ⚙️ SETTINGS PAGE (iOS 26 Style — Final)
-     ============================================ -->
-<div id="settingsPage" class="stg-page">
-  
-  <!-- ===== FLOATING BACK BUTTON ===== -->
-  <button class="stg-back" onclick="closeSettingsPage()" aria-label="Back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
-    </svg>
-  </button>
-  
-  <!-- ===== TITLE (Centered) ===== -->
-  <h1 class="stg-title" data-i18n="settings">Settings</h1>
-  
-  <!-- ===== SCROLL ===== -->
-  <div class="stg-scroll">
-    
-    <!-- ===== ACCOUNT ===== -->
-<section class="stg-card stg-card-account">
-  <button class="stg-row stg-row-account" onclick="openAccountModal()">
-    <div class="stg-avatar" id="stgAvatar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-        <circle cx="12" cy="7" r="4"/>
-      </svg>
-    </div>
-    <div class="stg-info">
-      <div class="stg-name" id="stgName" data-i18n="signIn">Sign In</div>
-      <div class="stg-sub" id="stgEmail" data-i18n="tapToSignIn">Tap to sign in</div>
-    </div>
-    <span class="stg-chevron">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </span>
-  </button>
-
-  <!-- ✅ جديد: زر أنشطتك -->
-  <button class="stg-row" onclick="openActivitiesPage()" id="activitiesBtn" style="border-top:1px solid var(--border-color);">
-    <div class="stg-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="5" y="2" width="14" height="20" rx="2"/>
-        <line x1="12" y1="18" x2="12.01" y2="18"/>
-        <path d="M9 6h6M9 10h6M9 14h4"/>
-      </svg>
-    </div>
-    <div class="stg-info">
-
-  <div class="stg-name" data-act="title">Your Activity</div>
-  <div class="stg-sub" data-act="settingsBtnSub">Devices connected to your account</div>
-    </div>
-
-    <span class="stg-chevron">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </span>
-  </button>
-</section>
-    
-    <!-- ===== APPEARANCE ===== -->
-    <div class="stg-label" data-i18n="sectionAppearance">APPEARANCE</div>
-    <section class="stg-card">
-      <button class="stg-row" onclick="openThemeSheet()">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="13.5" cy="6.5" r="1.2"/>
-            <circle cx="17.5" cy="10.5" r="1.2"/>
-            <circle cx="8.5" cy="7.5" r="1.2"/>
-            <circle cx="6.5" cy="12.5" r="1.2"/>
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="theme">Theme</div>
-        </div>
-        <div class="stg-value" id="stgThemeValue">Sea</div>
-        <span class="stg-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </button>
-      <div class="stg-row" id="stgDarkModeRow" style="display:none;">
-  <div class="stg-icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-    </svg>
-  </div>
-  <div class="stg-info">
-    <div class="stg-name" data-i18n="darkMode">Dark Mode</div>
-  </div>
-  <button class="stg-toggle" id="stgDarkMode" onclick="toggleSetting('darkMode')" aria-label="Toggle"></button>
-</div>
-      
-      <button class="stg-row" onclick="openFontSizePage()">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="4 7 4 4 20 4 20 7"/>
-            <line x1="9" y1="20" x2="15" y2="20"/>
-            <line x1="12" y1="4" x2="12" y2="20"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="fontSize">Font Size</div>
-        </div>
-        <div class="stg-value" id="stgFontSizeValue">Medium</div>
-        <span class="stg-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </button>
-      
-      <div class="stg-row">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="animations">Animations</div>
-        </div>
-        <button class="stg-toggle" id="stgAnimations" onclick="toggleSetting('animations')" aria-label="Toggle"></button>
-      </div>
-      
-    </section>
-    
-    <!-- ===== NOTIFICATIONS ===== -->
-    <div class="stg-label" data-i18n="sectionNotifications">NOTIFICATIONS</div>
-    <section class="stg-card">
-      
-      <div class="stg-row">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="enableAlerts">Enable Alerts</div>
-          <div class="stg-sub" data-i18n="enableAlertsSub">System notifications</div>
-        </div>
-        <button class="stg-toggle" id="stgNotifications" onclick="toggleSetting('notifications')" aria-label="Toggle"></button>
-      </div>
-      
-      <div class="stg-row">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="23 4 23 10 17 10"/>
-            <polyline points="1 20 1 14 7 14"/>
-            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/>
-            <path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="updateAlerts">Update Alerts</div>
-          <div class="stg-sub" data-i18n="updateAlertsSub">New app updates</div>
-        </div>
-        <button class="stg-toggle" id="stgUpdateAlerts" onclick="toggleSetting('updateAlerts')" aria-label="Toggle"></button>
-      </div>
-      
-    </section>
-    
-    <!-- ===== DOWNLOADS ===== -->
-    <div class="stg-label" data-i18n="sectionDownloads">DOWNLOADS</div>
-    <section class="stg-card">
-      
-      <div class="stg-row">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="autoDownload">Auto-download</div>
-          <div class="stg-sub" data-i18n="autoDownloadSub">Start instantly when tapped</div>
-        </div>
-        <button class="stg-toggle" id="stgAutoDownload" onclick="toggleSetting('autoDownload')" aria-label="Toggle"></button>
-      </div>
-      
-      <div class="stg-row">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
-            <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
-            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
-            <line x1="12" y1="20" x2="12.01" y2="20"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="wifiOnly">Wi-Fi Only</div>
-          <div class="stg-sub" data-i18n="wifiOnlySub">Download only on Wi-Fi</div>
-        </div>
-        <button class="stg-toggle" id="stgWifiOnly" onclick="toggleSetting('wifiOnly')" aria-label="Toggle"></button>
-      </div>
-      
-    </section>
-    
-    <!-- ===== LANGUAGE ===== -->
-    <div class="stg-label" data-i18n="sectionLanguage">LANGUAGE</div>
-    <section class="stg-card">
-      
-      <button class="stg-row" onclick="openLanguagePage()">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="language">Language</div>
-        </div>
-        <div class="stg-value" id="stgLanguageValue">العربية</div>
-        <span class="stg-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </button>
-      
-    </section>
-    
-    <!-- ===== STORAGE ===== -->
-    <div class="stg-label" data-i18n="sectionStorage">STORAGE</div>
-    <section class="stg-card">
-      
-      <div class="stg-row">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="12" cy="5" rx="9" ry="3"/>
-            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="cacheSize">Cache Size</div>
-        </div>
-        <div class="stg-value" id="stgCacheSize">—</div>
-      </div>
-      
-      <button class="stg-row" onclick="clearAppCache()">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3 6 5 6 21 6"/>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="clearCache">Clear Cache</div>
-        </div>
-        <span class="stg-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </button>
-      
-      <button class="stg-row stg-row-danger" onclick="resetAllSettings()">
-        <div class="stg-icon stg-icon-danger">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="1 4 1 10 7 10"/>
-            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="resetSettings">Reset Settings</div>
-          <div class="stg-sub" data-i18n="resetSettingsSub">Restore defaults</div>
-        </div>
-        <span class="stg-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </button>
-      
-    </section>
-    
-    <!-- ===== ABOUT ===== -->
-    <div class="stg-label" data-i18n="sectionAbout">ABOUT</div>
-    <section class="stg-card">
-      
-      <div class="stg-row">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="16" x2="12" y2="12"/>
-            <line x1="12" y1="8" x2="12.01" y2="8"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="appVersion">Version</div>
-        </div>
-        <div class="stg-value">iStore v3.1</div>
-      </div>
-      
-      <button class="stg-row" onclick="contactSupport()">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="contactSupport">Contact Support</div>
-        </div>
-        <span class="stg-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </button>
-      
-      <button class="stg-row" onclick="rateStore()">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="rateStore">Rate iStore</div>
-        </div>
-        <span class="stg-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </button>
-      
-    </section>
-    
-    <!-- ===== ADMIN (للأدمن فقط) ===== -->
-    <div class="stg-label stg-admin-only" id="stgAdminLabel" style="display:none;" data-i18n="sectionAdmin">ADMIN</div>
-    <section class="stg-card stg-admin-only" id="stgAdminCard" style="display:none;">
-      
-      <button class="stg-row" onclick="closeSettingsPage(); setTimeout(function(){ switchTab('admin_panel', null); }, 250);">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 7l4 4 5-7 5 7 4-4v12H3V7z"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="adminDashboard">Admin Dashboard</div>
-        </div>
-        <span class="stg-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </span>
-      </button>
-      
-      <div class="stg-row">
-        <div class="stg-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-            <circle cx="12" cy="12" r="3"/>
-          </svg>
-        </div>
-        <div class="stg-info">
-          <div class="stg-name" data-i18n="userPreview">User Preview Mode</div>
-        </div>
-        <button class="stg-toggle" id="stgUserPreview" onclick="toggleUserPreview()" aria-label="Toggle"></button>
-      </div>
-      
-    </section>
-    
-    <!-- مساحة أسفل -->
-    <div style="height:60px;"></div>
-    
-  </div>
-  
-</div>
- <!-- ===== SETTINGS CHOICE MODAL ===== -->
-<div id="stgChoiceModal" class="stg-modal">
-  <div class="stg-modal-bg" onclick="closeStgChoice()"></div>
-  <div class="stg-modal-content">
-    <div class="stg-modal-header">
-      <h3 class="stg-modal-title" id="stgChoiceTitle">Choose</h3>
-    </div>
-    <div class="stg-modal-list" id="stgChoiceList"></div>
-    <button class="stg-modal-cancel" onclick="closeStgChoice()" data-i18n="cancel">Cancel</button>
-  </div>
-</div>
- <!-- ============================================
-     🔐 LOGIN PAGE (iOS 26 Glass)
-     ============================================ -->
-<div id="loginPage" class="lgn-page">
-
-  <!-- Floating Back -->
-  <button class="lgn-back" onclick="closeLoginPage()" aria-label="Back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
-    </svg>
-  </button>
-
-  <!-- Title -->
-  <h1 class="lgn-title" data-i18n="accountTitle">Account</h1>
-
-  <!-- Scroll -->
-  <div class="lgn-scroll">
-
-    <!-- ===== LOGIN VIEW ===== -->
-    <div id="lgnLoginView">
-      <div class="lgn-hero">
-        <div class="lgn-icon-wrap">
-          <img src="https://raw.githubusercontent.com/benssariyassine-tech/iPA-Store/main/static/icon.png" alt="iStore" onerror="this.outerHTML='<svg viewBox=\'0 0 24 24\'><path d=\'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\'/><circle cx=\'12\' cy=\'7\' r=\'4\'/></svg>'">
-        </div>
-        <h2 class="lgn-hero-title" data-i18n="welcomeTitle">Welcome to iStore</h2>
-        <p class="lgn-hero-sub" data-i18n="welcomeSub">Sign in to like apps, post comments, and apply as a publisher.</p>
-      </div>
-
-      <button onclick="loginWithGoogle()" class="lgn-btn lgn-btn-google">
-        <svg viewBox="0 0 24 24">
-          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.14C3.16 21.39 7.23 24 12 24z"/>
-          <path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.62H1.18C.43 8.12 0 9.81 0 12s.43 3.88 1.18 5.38l4.09-3.14z"/>
-          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.16 2.61 1.18 6.62l4.09 3.14c.95-2.85 3.6-4.96 6.73-4.96z"/>
-        </svg>
-        <span data-i18n="signInGoogle">Sign in with Google</span>
-      </button>
-
-      <div class="lgn-divider"><span>OR</span></div>
-
-      <div class="lgn-group">
-        <div class="lgn-field">
-          <div class="lgn-field-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <input type="email" id="lgnEmail" placeholder="Email" data-i18n-placeholder="emailPlaceholder" autocomplete="email">
-        </div>
-        <div class="lgn-field">
-          <div class="lgn-field-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <input type="password" id="lgnPassword" placeholder="Password" data-i18n-placeholder="passwordPlaceholder" autocomplete="current-password">
-        </div>
-      </div>
-
-      <button class="lgn-forgot" onclick="forgotPasswordFromPage()" data-i18n="forgotPassword">Forgot password?</button>
-
-      <button onclick="loginWithEmailFromPage()" class="lgn-btn lgn-btn-primary" data-i18n="signIn">Sign In</button>
-
-      <div class="lgn-switch">
-        <span data-i18n="noAccount">Don't have an account? </span>
-        <button onclick="showRegisterFromPage()" data-i18n="createOne">Create one</button>
-      </div>
-    </div>
-
-    <!-- ===== REGISTER VIEW ===== -->
-    <div id="lgnRegisterView" style="display:none;">
-      <div class="lgn-hero">
-        <div class="lgn-icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
-        </div>
-        <h2 class="lgn-hero-title" data-i18n="createAccountTitle">Create Account</h2>
-        <p class="lgn-hero-sub" data-i18n="createAccountSub">Join iStore and start downloading today.</p>
-      </div>
-
-      <div class="lgn-group">
-        <div class="lgn-field">
-          <div class="lgn-field-icon">
-            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <input type="text" id="lgnName" placeholder="Full Name" data-i18n-placeholder="namePlaceholder" maxlength="30">
-        </div>
-        <div class="lgn-field">
-          <div class="lgn-field-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <input type="email" id="lgnRegEmail" placeholder="Email" data-i18n-placeholder="emailPlaceholder" autocomplete="email">
-        </div>
-        <div class="lgn-field">
-          <div class="lgn-field-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <input type="password" id="lgnRegPassword" placeholder="Password (min 6 chars)" data-i18n-placeholder="passwordPlaceholderReg" autocomplete="new-password">
-        </div>
-      </div>
-
-      <button onclick="registerFromPage()" class="lgn-btn lgn-btn-primary" data-i18n="createAccountBtn">Create Account</button>
-
-      <div class="lgn-switch">
-        <span data-i18n="haveAccount">Already have an account? </span>
-        <button onclick="showLoginFromPage()" data-i18n="signInLink">Sign in</button>
-      </div>
-    </div>
-
-<!-- ===== VERIFY CODE VIEW ===== -->
-    <div id="lgnVerifyView" style="display:none;">
-      <div class="lgn-hero">
-        <div class="lgn-icon-wrap lgn-icon-glass">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="18" height="14" rx="2"/>
-            <path d="M3 7l9 6 9-6"/>
-            <circle cx="12" cy="13" r="2" fill="currentColor" stroke="none"/>
-          </svg>
-        </div>
-        <h2 class="lgn-hero-title" data-i18n="verifyTitle">Verify Your Email</h2>
-        <p class="lgn-hero-sub" data-i18n="verifySub">We sent a 6-digit code to your email. Enter it below.</p>
-      </div>
-
-      <input type="text" id="lgnVerifyCode" class="lgn-code-input" placeholder="000000" maxlength="6" inputmode="numeric" autocomplete="one-time-code">
-
-      <button onclick="verifyCodeFromPage()" class="lgn-btn lgn-btn-primary" data-i18n="verifyBtn">Verify Account</button>
-      <button onclick="resendCodeFromPage()" class="lgn-btn lgn-btn-secondary" id="lgnResendBtn">Resend Code</button>
-
-      <div class="lgn-switch" style="margin-top:18px;">
-        <button onclick="handleSignOut(); closeLoginPage();" style="color:var(--danger);" data-i18n="cancel">Cancel</button>
-      </div>
-    </div>
-
-    <!-- ===== LOGGED IN VIEW ===== -->
-    <div id="lgnLoggedView" style="display:none;">
-      <div class="lgn-profile-wrap">
-        <div class="lgn-avatar-big" id="lgnAvatar">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h2 class="lgn-profile-name" id="lgnName">User</h2>
-        <p class="lgn-profile-email" id="lgnEmail">user@email.com</p>
-        <div>
-          <span class="lgn-badge user" id="lgnBadge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            User
-          </span>
-        </div>
-      </div>
-
-      <div class="lgn-verify-box" id="lgnVerifyBox" style="display:none;">
-        <p data-i18n="verifyRequired">⚠️ Your account is not verified. Please check your email (and Spam folder).</p>
-        <button onclick="reloadUserVerification(); syncLoginUI();" data-i18n="verifiedBtn">I have verified my email</button>
-      </div>
-
-      <div class="lgn-actions">
-        <button class="lgn-action" onclick="closeLoginPage(); setTimeout(openEditProfile, 250);">
-          <div class="lgn-action-icon">
-            <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          </div>
-          <span data-i18n="editProfile">Edit Profile</span>
-          <span class="stg-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </button>
-
-        <button class="lgn-action" id="lgnPartnerBtn" onclick="closeLoginPage(); setTimeout(openPartnerRequest, 250);">
-          <div class="lgn-action-icon gold">
-            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          </div>
-          <span data-i18n="applyPublisher">Apply as Publisher</span>
-          <span class="stg-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </button>
-
-        <button class="lgn-action" onclick="handleSignOut(); closeLoginPage();">
-          <div class="lgn-action-icon danger">
-            <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-          </div>
-          <span data-i18n="signOut" style="color:var(--danger);">Sign Out</span>
-        </button>
-      </div>
-    </div>
-
-  </div>
-</div>
- <!-- ===== VERIFY EMAIL INFO TOAST ===== -->
-<div id="verifyInfoToast" class="verify-info-toast">
-  <div class="verify-info-card">
-    <div class="verify-info-icon">
-      <svg viewBox="0 0 24 24">
-        <rect x="3" y="5" width="18" height="14" rx="2"/>
-        <path d="M3 7l9 6 9-6"/>
-        <circle cx="12" cy="13" r="2" fill="currentColor" stroke="none"/>
-      </svg>
-    </div>
-    <h3 class="verify-info-title" data-i18n="checkEmailTitle">Check Your Email</h3>
-    <p class="verify-info-text" data-i18n="checkEmailText">We sent a 6-digit code to:</p>
-    <p class="verify-info-email" id="verifyInfoEmail">your@email.com</p>
-    <div class="verify-info-note">
-      <span data-i18n="checkEmailNote">📩 Also check your</span>
-      <strong data-i18n="spamFolder">Spam / Junk</strong>
-      <span data-i18n="checkEmailNote2">folder</span>
-    </div>
-    <button class="verify-info-btn" onclick="closeVerifyInfoToast()">
-      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      <span data-i18n="gotIt">Got it</span>
-    </button>
-  </div>
-</div>
- <!-- ===== IOS CONFIRM DIALOG ===== -->
-<div id="iosConfirmModal" class="ios-confirm-modal">
-  <div class="ios-confirm-bg" onclick="closeIOSConfirm(false)"></div>
-  <div class="ios-confirm-content">
-    <div class="ios-confirm-card">
-      <div class="ios-confirm-icon" id="iosConfirmIcon"></div>
-      <h3 class="ios-confirm-title" id="iosConfirmTitle">Confirm</h3>
-      <p class="ios-confirm-message" id="iosConfirmMessage">Are you sure?</p>
-      <div class="ios-confirm-actions">
-        <button class="ios-confirm-btn ios-confirm-cancel" id="iosConfirmCancel" onclick="closeIOSConfirm(false)">
-          <span>Cancel</span>
-        </button>
-        <button class="ios-confirm-btn ios-confirm-ok" id="iosConfirmOk" onclick="closeIOSConfirm(true)">
-          <span>Confirm</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
- <!-- ===== ONBOARDING TOUR ===== -->
-<div id="tourWelcome" class="tour-welcome">
-  <div class="tour-welcome-card">
-    <div class="tour-welcome-icon">
-      <img src="https://raw.githubusercontent.com/benssariyassine-tech/iPA-Store/main/static/icon.png" alt="iStore" onerror="this.outerHTML='<svg viewBox=\'0 0 24 24\' style=\'width:44px;height:44px;stroke:#fff;fill:none;stroke-width:2\'><rect x=\'3\' y=\'4\' width=\'18\' height=\'18\' rx=\'2\'/><path d=\'M3 10h18M8 2v4M16 2v4\'/></svg>'">
-    </div>
-    <h2 class="tour-welcome-title" id="tourWelcomeTitle">
-      مرحباً بك في <span>iStore</span>
-    </h2>
-    <p class="tour-welcome-text" id="tourWelcomeText">
-      نودّ أن نأخذ من وقتك دقيقة واحدة لاكتشاف التصميم الجديد والميزات التي أضفناها خصيصاً لك.
-    </p>
-    <div class="tour-welcome-actions">
-      <button class="tour-welcome-btn tour-welcome-btn-primary" onclick="startTour()">
-        <span id="tourWelcomeStart">ابدأ الجولة</span>
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
-      <button class="tour-welcome-btn tour-welcome-btn-secondary" onclick="skipTour()" id="tourWelcomeSkip">
-        تخطّي — سأستكشف بنفسي
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- ===== SPOTLIGHT TOUR ===== -->
-<div id="tourOverlay" class="tour-overlay">
-  <div class="tour-backdrop"></div>
-  <div class="tour-spotlight" id="tourSpotlight"></div>
-  <div class="tour-tooltip" id="tourTooltip">
-    <div class="tour-progress">
-      <div class="tour-progress-bar">
-        <div class="tour-progress-fill" id="tourProgressFill"></div>
-      </div>
-      <span class="tour-progress-text" id="tourProgressText">1 / 6</span>
-    </div>
-    <h3 class="tour-title">
-      <span class="tour-title-icon" id="tourTitleIcon"></span>
-      <span id="tourTitleText">العنوان</span>
-    </h3>
-    <p class="tour-message" id="tourMessageText">الوصف</p>
-    <div class="tour-actions">
-      <button class="tour-btn tour-btn-skip" onclick="skipTour()" id="tourSkipBtn">تخطّي</button>
-      <button class="tour-btn tour-btn-next" onclick="nextTourStep()">
-        <span id="tourNextText">التالي</span>
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================
-     ACTIVITIES PAGE
-     ============================================ -->
-<div id="activitiesPage" class="stg-page">
-  <button class="stg-back" onclick="closeActivitiesPage()" aria-label="Back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
-    </svg>
-  </button>
-  <h1 class="stg-title" data-act="title">Your Activity</h1>
-  
-  <div class="stg-scroll">
-    
-    <div class="stg-label" data-act="currentSection">THIS DEVICE</div>
-    <section class="stg-card" id="currentSessionCard">
-      <div class="stg-row" style="align-items:flex-start;">
-        <div class="stg-icon" style="background:linear-gradient(135deg,rgba(50,215,75,0.2),rgba(50,215,75,0.08));color:var(--success);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
-          </svg>
-        </div>
-        <div class="stg-info" style="flex:1;">
-          <div class="stg-name" id="curDevName">—</div>
-          <div class="stg-sub" id="curDevInfo">—</div>
-          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:11px;font-weight:800;color:var(--success);background:rgba(50,215,75,0.12);padding:4px 10px;border-radius:20px;border:1px solid rgba(50,215,75,0.25);">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--success);box-shadow:0 0 6px var(--success);"></span>
-            <span data-act="currentBadge">Current Device</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="stg-label" style="display:flex;justify-content:space-between;align-items:center;">
-      <span data-act="othersSection">OTHER DEVICES</span>
-      <span id="otherDevicesCount" style="color:var(--subtext-color);font-size:11px;font-weight:700;"></span>
-    </div>
-    <section class="stg-card" id="otherSessionsCard">
-      <div style="padding:24px 16px;text-align:center;color:var(--subtext-color);font-size:13px;">Loading...</div>
-    </section>
-
-    <button class="stg-row stg-row-danger" onclick="logoutAllDevices()" style="margin-top:20px;background:rgba(255,69,58,0.08);border-radius:22px;border:1px solid rgba(255,69,58,0.2);">
-      <div class="stg-icon stg-icon-danger">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-          <polyline points="16 17 21 12 16 7"/>
-          <line x1="21" y1="12" x2="9" y2="12"/>
-        </svg>
-      </div>
-      <div class="stg-info">
-        <div class="stg-name" data-act="logoutAll">Sign out from all devices</div>
-        <div class="stg-sub" data-act="logoutAllSub">This will end every session including this one</div>
-      </div>
-    </button>
-    
-    <button class="stg-row" onclick="closeActivitiesPage(); setTimeout(openChangePasswordPage, 250);" style="margin-top:10px;">
-      <div class="stg-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-        </svg>
-      </div>
-      <div class="stg-info">
-        <div class="stg-name" data-act="changePass">Change Password</div>
-        <div class="stg-sub" data-act="changePassSub">Update your account password</div>
-      </div>
-      <span class="stg-chevron">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </span>
-    </button>
-    
-    <div style="height:80px;"></div>
-  </div>
-</div>
-
-<!-- ============================================
-     CHANGE PASSWORD PAGE
-     ============================================ -->
-<div id="changePasswordPage" class="stg-page">
-  <button class="stg-back" onclick="closeChangePasswordPage()" aria-label="Back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
-    </svg>
-  </button>
-  <h1 class="stg-title" data-act="chgTitle">Change Password</h1>
-  
-  <div class="stg-scroll">
-    <div class="stg-label" data-act="chgCurrent">CURRENT PASSWORD</div>
-    <section class="stg-card">
-      <div class="stg-row" style="padding:4px 16px;">
-        <input type="password" id="chgCurrentPass" data-act-ph="chgCurrentPh" placeholder="Enter current password" 
-          style="flex:1;background:transparent;border:none;outline:none;color:var(--text-color);font-family:inherit;font-size:15px;padding:14px 0;">
-      </div>
-    </section>
-    
-    <div class="stg-label" style="margin-top:22px;" data-act="chgNew">NEW PASSWORD</div>
-    <section class="stg-card">
-      <div class="stg-row" style="padding:4px 16px;">
-        <input type="password" id="chgNewPass" data-act-ph="chgNewPh" placeholder="At least 6 characters" 
-          style="flex:1;background:transparent;border:none;outline:none;color:var(--text-color);font-family:inherit;font-size:15px;padding:14px 0;">
-      </div>
-      <div class="stg-row" style="padding:4px 16px;border-top:1px solid var(--border-color);">
-        <input type="password" id="chgNewPass2" data-act-ph="chgNewPh2" placeholder="Repeat new password" 
-          style="flex:1;background:transparent;border:none;outline:none;color:var(--text-color);font-family:inherit;font-size:15px;padding:14px 0;">
-      </div>
-    </section>
-    
-    <div style="padding:0 4px;margin-top:12px;font-size:12px;color:var(--subtext-color);line-height:1.6;" data-act="chgNote">
-      For security, you must enter your current password. If you forgot it, sign out and use "Forgot password" or sign in with Google.
-    </div>
-    
-    <button onclick="submitChangePassword()" class="btn-primary" style="margin-top:20px;padding:16px;font-size:15px;">
-      <span data-act="chgBtn">Update Password</span>
-    </button>
-    
-    <div style="height:80px;"></div>
-  </div>
-</div>
- <!-- ⬇️⬇️⬇️ DMCA-PAGE-START ⬇️⬇️⬇️ -->
-<div id="dmcaPage" class="dmca-page">
-
-  <!-- زر الرجوع -->
-  <button class="dmca-back" onclick="closeDMCAPage()" aria-label="Back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
-    </svg>
-  </button>
-
-  <!-- العنوان -->
-  <h1 class="dmca-title">DMCA &amp; Copyright Policy</h1>
-
-  <!-- Scroll -->
-  <div class="dmca-scroll">
-    <div class="dmca-container">
-
-      <p class="dmca-meta">iStore — All Rights Reserved &copy; 2026</p>
-
-      <p class="dmca-intro">
-        This website and all of its content, including but not limited to source code (HTML, CSS, JavaScript),
-        design, layout, UI elements, graphics, icons, logos, and database structure, are the exclusive property
-        of the iStore Team and are protected by the Digital Millennium Copyright Act (DMCA), international
-        copyright treaties, and the Berne Convention.
-      </p>
-
-      <!-- 1 -->
-      <h2>1. Copyright Notice</h2>
-      <p>
-        All materials contained on this website are protected by applicable copyright law. No part of this
-        website may be reproduced, distributed, modified, displayed, published, or transmitted in any form
-        or by any means, including electronic, mechanical, photocopying, recording, or otherwise, without the
-        prior written permission of the copyright owner.
-      </p>
-      <p>
-        Any unauthorized use of the materials on this website may violate copyright laws, trademark laws,
-        the laws of privacy and publicity, and civil and criminal statutes.
-      </p>
-
-      <!-- 2 -->
-      <h2>2. DMCA — Notification of Infringement</h2>
-      <p>
-        If you believe that your work has been copied in a way that constitutes copyright infringement, please
-        provide our Copyright Agent with the following information in writing:
-      </p>
-      <ul>
-        <li>A physical or electronic signature of the copyright owner or a person authorized to act on their behalf;</li>
-        <li>Identification of the copyrighted work claimed to have been infringed;</li>
-        <li>Identification of the material that is claimed to be infringing, with sufficient detail to permit us to locate it;</li>
-        <li>Your contact information, including your address, telephone number, and e-mail address;</li>
-        <li>A statement that you have a good faith belief that the disputed use is not authorized by the copyright owner;</li>
-        <li>A statement, made under penalty of perjury, that the above information is accurate and that you are the copyright owner or authorized to act on their behalf.</li>
-      </ul>
-      <p>
-        Notification must be sent to:
-        <a href="mailto:support.istoreipa@gmail.com">support.istoreipa@gmail.com</a>
-      </p>
-
-      <!-- 3 -->
-      <h2>3. Counter-Notification</h2>
-      <p>
-        If you believe that the material you posted was removed or disabled by mistake or misidentification,
-        you may submit a counter-notification to our Copyright Agent. Your counter-notification must include
-        your contact information, identification of the removed material, and a statement under penalty of
-        perjury that you have a good faith belief the material was removed by mistake.
-      </p>
-
-      <!-- 4 -->
-      <h2>4. Repeat Infringer Policy</h2>
-      <p>
-        In accordance with the DMCA and other applicable law, iStore has adopted a policy of terminating,
-        in appropriate circumstances, users who are deemed to be repeat infringers. We may also, at our sole
-        discretion, limit access to the Service and/or terminate the accounts of any users who infringe any
-        intellectual property rights of others.
-      </p>
-
-      <!-- 5 -->
-      <h2>5. Third-Party Content &amp; Takedown Requests</h2>
-      <p>
-        iStore does not host any files on its servers. All download links are provided by third-party
-        platforms (such as GitHub, Telegram, and other public repositories) and are intended for educational
-        and testing purposes only. If you are a copyright owner and wish to have a link removed, please
-        contact us and we will act promptly.
-      </p>
-
-      <!-- 6 -->
-      <h2>6. CCPA — California Consumer Privacy Act</h2>
-      <p>
-        If you are a resident of California, you have the right to:
-      </p>
-      <ul>
-        <li>Know what personal information we collect, use, share, or sell;</li>
-        <li>Request deletion of your personal information;</li>
-        <li>Opt out of the sale of your personal information;</li>
-        <li>Not be discriminated against for exercising your privacy rights.</li>
-      </ul>
-      <p>
-        To exercise any of these rights, please contact us at
-        <a href="mailto:support.istoreipa@gmail.com">support.istoreipa@gmail.com</a>.
-      </p>
-
-      <!-- 7 -->
-      <h2>7. GDPR — EU General Data Protection Regulation</h2>
-      <p>
-        If you are located in the European Economic Area (EEA), you have additional rights under the GDPR,
-        including the right to access, rectify, erase, restrict, or object to the processing of your personal
-        data, as well as the right to data portability. We process personal data only when we have a lawful
-        basis to do so, such as your consent, a contract, or a legal obligation.
-      </p>
-
-      <!-- 8 -->
-      <h2>8. Data We Collect</h2>
-      <p>
-        We may collect limited information necessary to operate the service, including:
-      </p>
-      <ul>
-        <li>Account information (email address, display name);</li>
-        <li>Authentication identifiers provided by third-party providers (such as Google);</li>
-        <li>Device information (browser type, operating system, screen size);</li>
-        <li>Usage data (downloaded apps, liked apps, comments).</li>
-      </ul>
-      <p>
-        We do not sell your personal information to third parties.
-      </p>
-
-      <!-- 9 -->
-      <h2>9. Cookies &amp; Local Storage</h2>
-      <p>
-        iStore may use cookies and browser local storage to remember your preferences (theme, language,
-        favorites) and to improve your experience. You can control cookies through your browser settings.
-      </p>
-
-      <!-- 10 -->
-      <h2>10. Disclaimer</h2>
-      <p>
-        iStore is not affiliated with Apple Inc., Google LLC, or any app developer. All trademarks, logos,
-        and brand names are the property of their respective owners. All content is provided "as is" without
-        warranty of any kind, either express or implied.
-      </p>
-
-      <!-- 11 -->
-      <h2>11. Changes to This Policy</h2>
-      <p>
-        We reserve the right to update this policy at any time. Changes will be posted on this page with an
-        updated revision date. Continued use of the website after changes constitutes acceptance of the new
-        policy.
-      </p>
-
-      <!-- 12 -->
-      <h2>12. Contact</h2>
-      <p>
-        For any question regarding this DMCA / Copyright Policy, please contact us at:
-        <a href="mailto:support.istoreipa@gmail.com">support.istoreipa@gmail.com</a>
-      </p>
-
-      <!-- WARNING BOX -->
-      <div class="dmca-warning">
-        <h3> WARNING — Unauthorized Use</h3>
-        <p>
-          Any copying, modification, distribution, or commercial use of the content of this website without
-          written permission is strictly prohibited and will be prosecuted to the fullest extent of the law.
-        </p>
-      </div>
-
-      <!-- REPORT BOX -->
-      <div class="dmca-report">
-        <h3> To Report a Violation</h3>
-        <p>
-          Send an email with full details to:
-          <a href="mailto:support.istoreipa@gmail.com">support.istoreipa@gmail.com</a>
-        </p>
-      </div>
-
-      <button class="dmca-close-btn" onclick="closeDMCAPage()">Close &amp; Go Back</button>
-
-    </div>
-  </div>
-</div>
-<!-- ⬆️⬆️⬆️ DMCA-PAGE-END ⬆️⬆️⬆️ -->
-<script src="/static/script.js" defer></script>
+    <script>
+        // ═══════════════════════════════════════════════════════════
+        // 1. DUMMY DATA (For UI Testing Only)
+        // ═══════════════════════════════════════════════════════════
+        const apps = [
+            {
+                id: 1,
+                name: "Pixel Art Editor",
+                publisher: "@pixel_team",
+                platform: "IPA",
+                icon: "https://picsum.photos/seed/pixel/100/100",
+                banner: "https://picsum.photos/seed/pixelbanner/600/300",
+                desc: "Create stunning pixel art on your iPhone with advanced tools."
+            },
+            {
+                id: 2,
+                name: "Space Shooter X",
+                publisher: "@space_games",
+                platform: "APK",
+                icon: "https://picsum.photos/seed/space/100/100",
+                banner: "https://picsum.photos/seed/spacebanner/600/300",
+                desc: "Defend the galaxy in this retro style arcade shooter game."
+            },
+            {
+                id: 3,
+                name: "VLC Media Player",
+                publisher: "@videolan",
+                platform: "IPA",
+                icon: "https://picsum.photos/seed/vlc/100/100",
+                banner: "https://picsum.photos/seed/vlcbanner/600/300",
+                desc: "The ultimate open-source media player. Plays everything."
+            }
+        ];
+
+        // ═══════════════════════════════════════════════════════════
+        // 2. RENDER APPS
+        // ═══════════════════════════════════════════════════════════
+        function renderApps() {
+            const grid = document.getElementById('app-grid');
+            grid.innerHTML = '';
+            
+            apps.forEach((app, index) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                card.innerHTML = `
+                    <div class="card-banner">
+                        <img src="${app.banner}" alt="${app.name}">
+                        <span class="card-badge">${app.platform}</span>
+                    </div>
+                    <div class="card-content">
+                        <img src="${app.icon}" class="card-icon" alt="icon">
+                        <div class="card-info">
+                            <h3>${app.name}</h3>
+                            <div class="publisher">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 16 14"/></svg>
+                                By ${app.publisher}
+                            </div>
+                            <p class="desc">${app.desc}</p>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // ═══════════════════════════════════════════════════════════
+        // 3. THEME ENGINE
+        // ═══════════════════════════════════════════════════════════
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            
+            // Update active button state
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // ═══════════════════════════════════════════════════════════
+        // 4. MODAL CONTROLS
+        // ═══════════════════════════════════════════════════════════
+        function openSettings() {
+            document.getElementById('settingsModal').classList.add('open');
+        }
+        function closeSettings() {
+            document.getElementById('settingsModal').classList.remove('open');
+        }
+
+        // Close modal on outside click
+        document.getElementById('settingsModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) closeSettings();
+        });
+
+        // ═══════════════════════════════════════════════════════════
+        // 5. INITIALIZATION
+        // ═══════════════════════════════════════════════════════════
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set Date
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('dateText').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+
+            // Render Apps
+            renderApps();
+            
+            // Set default theme button
+            document.querySelector('.theme-btn').classList.add('active');
+        });
+    </script>
 </body>
 </html>
